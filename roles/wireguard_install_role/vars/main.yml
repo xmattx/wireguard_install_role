@@ -1,2 +1,11 @@
 ---
-# vars file for wireguard_install
+
+server_pub_ip: "x.x.x.x"
+server_nic: "x"
+server_wg_nic: "wg0"
+server_wg_ipv4: "10.66.66.1"
+server_wg_ipv6: "fd42:42:42::1"
+server_port: "50324" # A number between 49152 and 65535
+client_dns1: "1.1.1.1"
+client_dns2: "1.0.0.1"
+allowed_ips: "0.0.0.0/0,::/0"
