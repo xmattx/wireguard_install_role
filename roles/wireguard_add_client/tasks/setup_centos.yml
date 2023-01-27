@@ -1,0 +1,11 @@
+---
+
+- name: Installing some needed packages
+  ansible.builtin.yum:
+    name:
+      - epel-release
+      - elrepo-release
+      - kmod-wireguard
+      - wireguard-tools
+      - iptables
+    state: present

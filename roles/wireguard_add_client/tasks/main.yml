@@ -1,0 +1,18 @@
+---
+
+#############################
+#                           #
+# MAIN INSTALLATION PROCESS #
+#                           #
+#############################
+
+- name: Preliminary checks
+  ansible.builtin.import_tasks: preliminary.yml
+
+- name: Running setup for ubuntu
+  ansible.builtin.import_tasks: setup_ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
+
+- name: Running setup for centos
+  ansible.builtin.import_tasks: setup_centos.yml
+  when: ansible_distribution == "CentOS"
