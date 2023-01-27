@@ -1,7 +1,7 @@
 ---
 
 - name: Checking for virt
-  ansible.builtin.command: systemd detect virt
+  ansible.builtin.command: systemd-detect-virt
   register: isVirt
 
 - name: Outputting fail message
