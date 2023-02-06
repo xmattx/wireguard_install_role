@@ -1,5 +1,6 @@
 ---
 
+# NEEDED VARS FOR SERVER INSTALL
 server_pub_ip: "54.36.191.132"
 server_nic: "ens3"
 server_wg_nic: "wg0"
@@ -9,3 +10,7 @@ server_port: "50324" # A number between 49152 and 65535
 client_dns1: "1.1.1.1"
 client_dns2: "1.0.0.1"
 allowed_ips: "0.0.0.0/0,::/0"
+
+# NEEDED VARS FOR CLIENT ADD
+client_name: "testClient"
+client_private_ip: "10.66.66.2" # Must be in server's subnet (/24, so between 10.66.66.2 and 10.66.66.254) 

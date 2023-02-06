@@ -1,7 +1,7 @@
 ---
 
 - name: Checking for virt
-  ansible.builtin.command: systemd detect virt
+  ansible.builtin.command: systemd-detect-virt
   register: isVirt
 
 - name: Outputting fail message
@@ -12,5 +12,3 @@
 - name: Failing if OpenVZ or LXC
   ansible.builtin.fail:
   when: isVirt.stdout == "openvz" or isVirt.stdout == "lxc"
-
-# Checking for os is not needed here

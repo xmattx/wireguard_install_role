@@ -1,0 +1,9 @@
+[Interface]
+PrivateKey = {{ client_private_key.stdout }}
+Address = {{ client_private_ip }}/32
+DNS = {{ client_dns1 }},{{ client_dns2 }}
+[Peer]
+PublicKey = {{ client_public_key.stdout }}
+PresharedKey = {{ client_psk.stdout }}
+Endpoint = {{ endpoint }}
+AllowedIPs = {{ allowed_ips }}
