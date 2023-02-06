@@ -8,7 +8,7 @@
 
 - name: Defining some stuff
   ansible.builtin.set_fact:
-    - endpoint: '{{ server_pub_ip }}:{{ server_port }}'
+    endpoint: '{{ server_pub_ip }}:{{ server_port }}'
 
 - name: register file wg conf out
   ansible.builtin.command: cat /etc/wireguard/{{ server_wg_nic }}.conf
@@ -38,7 +38,7 @@
 
 - name: Grabbing server's public key
   ansible.builtin.set_fact:
-    - server_public_key: "{{ wgParams.stdout | regex_search('(?<=SERVER_PUB_KEY=)(.*)') }}"
+    server_public_key: "{{ wgParams.stdout | regex_search('(?<=SERVER_PUB_KEY=)(.*)') }}"
 
 - name: Templating conf file for our client
   ansible.builtin.template:
