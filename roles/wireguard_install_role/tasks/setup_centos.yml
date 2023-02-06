@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 
 - name: Installing some needed packages
@@ -9,3 +10,6 @@
       - wireguard-tools
       - iptables
     state: present
+=======
+---
+>>>>>>> master
