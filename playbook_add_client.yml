@@ -5,4 +5,5 @@
     - community.general
   roles:
     - roles/wireguard_add_client
+  become: true
 

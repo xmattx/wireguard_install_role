@@ -14,9 +14,9 @@
   ansible.builtin.command: cat /etc/wireguard/{{ server_wg_nic }}.conf
   register: wgConf
 
-- name: Failing if client name exists
-  ansible.builtin.fail:
-  when: wgConf.stdout | search("{{ client_name }}")
+# - name: Failing if client name exists
+#   ansible.builtin.fail:
+#   when: wgConf.stdout | search("{{ client_name }}")
 
 - name: Generating client private key
   ansible.builtin.command: wg genkey
@@ -51,7 +51,6 @@
     block: |
       ### Client {{ client_name }}
       [Peer]
-      PublicKey = {{ client_public_key }}
+      PublicKey = {{ client_public_key.stdout }}
       PresharedKey = {{ client_psk.stdout }}
       AllowedIPs = {{ client_private_ip }}/32
-
